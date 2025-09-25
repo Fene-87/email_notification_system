@@ -40,7 +40,6 @@ Login credentials:
 (There’s a migration that creates the Oban jobs table, so you don’t need to add it.)
 
 4) Start the app
-# Dev server with interactive shell:
 iex -S mix phx.server
 
 or
