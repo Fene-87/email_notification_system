@@ -1,0 +1,17 @@
+{
+  "name": "email_notification_system_assets",
+  "version": "1.0.0",
+  "description": "Assets for Email Notification System",
+  "scripts": {
+    "deploy": "tailwindcss --minify -o ../priv/static/assets/app.css",
+    "watch": "tailwindcss -i css/app.css -o ../priv/static/assets/app.css --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0",
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "phoenix_live_view": "file:../deps/phoenix_live_view",
+    "phoenix-colocated": "file:../deps/phoenix/priv/static/phoenix-colocated",
+    "tailwindcss": "^3.4.0"
+  }
+}
