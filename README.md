@@ -32,6 +32,11 @@ mix ecto.create
 mix ecto.migrate
 mix run priv/repo/seeds.exs
 
+Login credentials:
+ - Frontend user: Email: user@email.com, Password: User123!
+ - Admin user: Email: admin@email.com, Password: Admin123!
+ - Superuser: Email: superuser@email.com, Password: Super123!
+
 (There’s a migration that creates the Oban jobs table, so you don’t need to add it.)
 
 4) Start the app
