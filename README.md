@@ -49,6 +49,9 @@ mix phx.server
 Visit http://localhost:4000.
 
 
+BRIEF LIVE DEMO VIDE0
+https://drive.google.com/file/d/16ltiJg3Nt_M1q3QseKbq6aADvKhV_fC8/view?usp=sharing
+
 HOW THE SYSTEM WORKS(user flows)
 1) Authentication
 /auth – Register or login.
