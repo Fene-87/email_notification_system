@@ -153,8 +153,21 @@ defmodule EmailNotificationSystemWeb.Admin.AdminUsersLive do
                 </div>
 
                 <div class="flex items-center space-x-2">
-                  <%!-- Superuser-only actions (not on self, not on other superusers) --%>
-                  <%= if @current_user.access_level == "superuser" and @current_user.id != user.id and user.access_level != "superuser" do %>
+                  <%= if @current_user.access_level == "superuser" and @current_user.id != user.id do %>
+                    <%= if user.access_level == "admin" do %>
+                      <button phx-click="grant_superuser" phx-value-id={user.id}
+                              class="px-3 py-2 border rounded-lg text-sm bg-indigo-600 hover:bg-indigo-700 text-white">
+                        Make superuser
+                      </button>
+                    <% end %>
+
+                    <%= if user.access_level == "superuser" do %>
+                      <button phx-click="revoke_superuser" phx-value-id={user.id}
+                              class="px-3 py-2 border rounded-lg text-sm hover:bg-gray-50">
+                        Revoke superuser
+                      </button>
+                    <% end %>
+
                     <%= if user.plan_type == "gold" do %>
                       <button phx-click="downgrade_plan" phx-value-id={user.id}
                               class="px-3 py-2 border rounded-lg text-sm hover:bg-gray-50">

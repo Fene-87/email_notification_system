@@ -1,8 +1,6 @@
 defmodule EmailNotificationSystemWeb.ProfileLive do
   use EmailNotificationSystemWeb, :live_view
 
-  # alias EmailNotificationSystem.Accounts
-
   def mount(_params, _session, socket) do
     {:ok, assign(socket, page_title: "Profile")}
   end

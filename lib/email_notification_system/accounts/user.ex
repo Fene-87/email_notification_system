@@ -49,7 +49,7 @@ defmodule EmailNotificationSystem.Accounts.User do
   defp normalize_msisdn(msisdn) do
     digits = String.replace(msisdn, ~r/\D/, "")
     cond do
-      String.starts_with?(digits, "254") -> "+" <> digits                       # already intl without '+'
+      String.starts_with?(digits, "254") -> "+" <> digits
       String.starts_with?(digits, "0")   -> "+254" <> binary_part(digits, 1, byte_size(digits)-1)
       true                               -> "+" <> digits
     end
