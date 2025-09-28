@@ -29,7 +29,7 @@ defmodule EmailNotificationSystemWeb.ComposeEmailLive do
         form: form,
         contacts: contacts,
         groups: groups,
-        selected_contacts: [],   # list, not MapSet
+        selected_contacts: [],
         selected_group: nil,
         email_type: "single",
         show_recipients: false
@@ -80,9 +80,6 @@ defmodule EmailNotificationSystemWeb.ComposeEmailLive do
 
   defp send_single_email(email_params, socket) do
     if length(socket.assigns.selected_contacts) == 1 do
-      # contact_id = hd(socket.assigns.selected_contacts)
-      # contact = Enum.find(socket.assigns.contacts, &(&1.id == contact_id))
-
       contact_id = hd(socket.assigns.selected_contacts)
       contact = Enum.find(socket.assigns.contacts, &(&1.id == contact_id))
 
@@ -109,9 +106,6 @@ defmodule EmailNotificationSystemWeb.ComposeEmailLive do
 
   defp send_bulk_email(email_params, socket) do
     if length(socket.assigns.selected_contacts) > 1 do
-      # contacts = Enum.filter(socket.assigns.contacts,
-      #   &(&1.id in socket.assigns.selected_contacts))
-
       contacts = Enum.filter(socket.assigns.contacts, &(&1.id in socket.assigns.selected_contacts))
 
       email_params = Map.put(email_params, "email_type", "bulk")
